@@ -19,7 +19,7 @@ requirements:
 about:
   home: https://github.com/AnacondaRecipes/git-askpass-ci-helper-feedstock
   license: BSD-3
-  license_file: LICENSE.txt
+  license_file: LICENSE
   license_family: BSD
   summary: Utility for printing git secrets using GIT_ASKPASS.
 
