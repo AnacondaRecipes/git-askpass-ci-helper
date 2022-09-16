@@ -1,5 +1,4 @@
 aggregate_check: false
-aggregate_branch: main
 channels:
   - distro-tooling
 
