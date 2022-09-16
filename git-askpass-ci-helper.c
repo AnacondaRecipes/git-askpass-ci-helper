@@ -11,6 +11,6 @@ int main(int argc, char** argv)
     if (!secret_value)
         return 1;
     
-    printf("%s\n", secret_value);
+    printf("%s", secret_value);
     return 0;
 }
