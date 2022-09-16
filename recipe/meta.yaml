@@ -1,0 +1,32 @@
+{% set name = "git-askpass-ci-helper" %}
+{% set version = "0.0.1" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: ./
+
+build:
+  number: 0
+  skip: true  # [py<36 or not win]
+
+requirements:
+  build:
+    - {{ compiler('c') }}
+
+about:
+  home: https://github.com/AnacondaRecipes/git-askpass-ci-helper-feedstock
+  license: BSD-3
+  license_file: LICENSE.txt
+  license_family: BSD
+  summary: Utility for printing git secrets using GIT_ASKPASS.
+
+  doc_url: https://github.com/AnacondaRecipes/git-askpass-ci-helper-feedstock
+  dev_url: https://github.com/AnacondaRecipes/git-askpass-ci-helper-feedstock
+  doc_source_url: https://github.com/AnacondaRecipes/git-askpass-ci-helper-feedstock/tree/master/README.md
+
+extra:
+  recipe-maintainers:
+    - dkomisar
