@@ -11,7 +11,12 @@ int main_func(int argc, char** argv)
 
     if (log.fail() or log.bad())
     {
-      return 99;
+        return 99;
+    }
+
+    for (int ac=1; ac < argc; ++ac)
+    {
+        log << "arg " << ac << " " << argv[ac] << endl;
     }
 
     // get variable name which has secret
