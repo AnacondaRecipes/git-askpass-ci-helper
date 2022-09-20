@@ -37,8 +37,8 @@ int main(int argc, char** argv)
     string secret_value(secret_value_p);
     if (secret_value.length() != 40)
     {
-        log << "secret value is too long" << endl;
-        return 6;
+        log << "secret value not length of 40: " << secret_value.length() << endl;
+        return 5;
     }
 
     // print secret
