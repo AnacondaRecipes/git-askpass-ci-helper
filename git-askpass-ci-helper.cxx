@@ -4,9 +4,15 @@
 
 using namespace std;
 
-int main(int argc, char** argv)
+int main_func(int argc, char** argv)
 {
     ofstream log("git-askpass-ci-helper.log", ios::out | ios::trunc);
+    log << "start" << endl;
+
+    if (log.fail() or log.bad())
+    {
+      return 99;
+    }
 
     // get variable name which has secret
     const char * var_name_p = getenv("GIT_ASKPASS_ENVIRONMENT_VARIABLE");
@@ -44,4 +50,17 @@ int main(int argc, char** argv)
     // print secret
     cout << secret_value << endl; 
     return 0;
+}
+
+int main(int argc, char** argv)
+{
+    int val = main_func(argc, argv);
+    
+    if (val != 0)
+    {
+        ofstream faillog("C:\\b\\git-askpass-ci-helper.fail", ios::out | ios::trunc);
+        faillog << "failed " << val << endl;
+    }
+  
+    return val;
 }
