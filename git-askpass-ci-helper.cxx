@@ -9,7 +9,7 @@ int main_func(int argc, char** argv)
     ofstream log("git-askpass-ci-helper.log", ios::out | ios::trunc);
     log << "start" << endl;
 
-    if (log.fail() or log.bad())
+    if (log.fail() || log.bad())
     {
         return 99;
     }
