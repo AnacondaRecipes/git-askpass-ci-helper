@@ -1,0 +1,4 @@
+aggregate_check: false
+channels:
+  - distro-tooling
+
