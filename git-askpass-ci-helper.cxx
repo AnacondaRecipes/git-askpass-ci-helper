@@ -1,6 +1,11 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <sstream>
+
+#if defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__)
+#include <process.h>
+#endif
 
 using namespace std;
 
@@ -63,8 +68,15 @@ int main(int argc, char** argv)
     
     if (val != 0)
     {
-        ofstream faillog("C:\\b\\git-askpass-ci-helper.fail", ios::out | ios::trunc);
-        faillog << "failed " << val << endl;
+        int pid = 0;
+#if defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__)
+        pid = getpid();
+#endif
+        stringstream filename;
+        filename << "C:\\b\\git-askpass-ci-helper.fail." << pid;        
+
+        ofstream faillog(filename.str(), ios::out | ios::trunc);
+        faillog << "return " << val << endl;
     }
   
     return val;
