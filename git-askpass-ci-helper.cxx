@@ -68,6 +68,8 @@ int main(int argc, char** argv)
     
     if (val != 0)
     {
+        cout << "Failure " << val << endl;
+
         int pid = 0;
 #if defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__)
         pid = getpid();
